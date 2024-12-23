@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_kids_app/pages/article/components/article_card.dart';
 import 'package:smart_kids_app/pages/article/components/carousel_card.dart';
 
@@ -71,11 +70,11 @@ class _ArticlePageState extends State<ArticlePage> {
     var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
 
     return Padding(
-      padding: EdgeInsets.only(top: 20),
+      padding: const EdgeInsets.only(top: 20),
       child: ListView(
         children: [
           Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Text(
                 'Articles',
                 textAlign: TextAlign.center,
@@ -83,7 +82,7 @@ class _ArticlePageState extends State<ArticlePage> {
                     fontWeight: FontWeight.w600,
                     fontSize: isPortrait ? 17 : 20),
               )),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           SizedBox(
@@ -148,7 +147,7 @@ class _ArticlePageState extends State<ArticlePage> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Padding(
@@ -159,14 +158,14 @@ class _ArticlePageState extends State<ArticlePage> {
                   fontWeight: FontWeight.bold, fontSize: isPortrait ? 17 : 19),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           SizedBox(
             child: ListView.separated(
-              padding: EdgeInsets.only(left: 15, right: 15),
+              padding: const EdgeInsets.only(left: 15, right: 15),
               separatorBuilder: (context, index) {
-                return SizedBox(
+                return const SizedBox(
                   height: 20,
                 );
               },
@@ -183,25 +182,25 @@ class _ArticlePageState extends State<ArticlePage> {
               },
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Text(
               "The Newest",
               style: TextStyle(
                   fontWeight: FontWeight.bold, fontSize: isPortrait ? 17 : 19),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           SizedBox(
             child: ListView.separated(
-              padding: EdgeInsets.only(left: 15, right: 15),
+              padding: const EdgeInsets.only(left: 15, right: 15),
               separatorBuilder: (context, index) {
-                return SizedBox(
+                return const SizedBox(
                   height: 20,
                 );
               },
@@ -218,7 +217,7 @@ class _ArticlePageState extends State<ArticlePage> {
               },
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
         ],

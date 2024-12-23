@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_kids_app/pages/mycourse/component/course_done.dart';
 import 'package:smart_kids_app/pages/mycourse/component/course_ongoing.dart';
 
@@ -62,11 +61,11 @@ class _MycoursePageState extends State<MycoursePage> {
     var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
 
     return Padding(
-      padding: EdgeInsets.only(top: 20),
+      padding: const EdgeInsets.only(top: 20),
       child: ListView(
         children: [
           Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Text(
                 'Courses',
                 textAlign: TextAlign.center,
@@ -74,7 +73,7 @@ class _MycoursePageState extends State<MycoursePage> {
                     fontWeight: FontWeight.w600,
                     fontSize: isPortrait ? 17 : 19),
               )),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           DefaultTabController(
@@ -82,7 +81,8 @@ class _MycoursePageState extends State<MycoursePage> {
             child: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
                   child: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
@@ -132,9 +132,9 @@ class _MycoursePageState extends State<MycoursePage> {
 Widget _ongoing() {
   return SizedBox(
     child: ListView.separated(
-      padding: EdgeInsets.only(left: 15, right: 15, top: 15),
+      padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
       separatorBuilder: (context, index) {
-        return SizedBox(
+        return const SizedBox(
           height: 10,
         );
       },
@@ -157,9 +157,9 @@ Widget _ongoing() {
 Widget _finished() {
   return SizedBox(
     child: ListView.separated(
-      padding: EdgeInsets.only(left: 15, right: 15, top: 15),
+      padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
       separatorBuilder: (context, index) {
-        return SizedBox(
+        return const SizedBox(
           height: 10,
         );
       },

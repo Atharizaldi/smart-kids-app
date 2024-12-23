@@ -1,9 +1,6 @@
-import 'dart:ffi';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -45,12 +42,12 @@ class _ProfilePageState extends State<ProfilePage> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100),
                       color: Colors.green,
-                      image: DecorationImage(
+                      image: const DecorationImage(
                           image: AssetImage('assets/profilephoto.png'),
                           fit: BoxFit.cover),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Text(
@@ -61,7 +58,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
@@ -70,12 +67,12 @@ class _ProfilePageState extends State<ProfilePage> {
                     BoxDecoration(borderRadius: BorderRadius.circular(20)),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
-                  child: Image(
+                  child: const Image(
                     image: AssetImage("assets/banner/4665 (1).png"),
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
               Row(
@@ -87,8 +84,8 @@ class _ProfilePageState extends State<ProfilePage> {
                       height: isPortrait ? 90 : 110,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: Color.fromARGB(255, 241, 234, 236),
-                          boxShadow: [
+                          color: const Color.fromARGB(255, 241, 234, 236),
+                          boxShadow: const [
                             BoxShadow(
                               blurRadius: 1,
                               color: Colors.grey,
@@ -98,9 +95,9 @@ class _ProfilePageState extends State<ProfilePage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Image(
-                              image: AssetImage("assets/icons/1.png"),
+                              image: const AssetImage("assets/icons/1.png"),
                               height: isPortrait ? 65 : 80),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
                           Expanded(
@@ -115,7 +112,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
                   Expanded(
@@ -123,8 +120,8 @@ class _ProfilePageState extends State<ProfilePage> {
                       height: isPortrait ? 90 : 110,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: Color.fromARGB(255, 241, 234, 236),
-                          boxShadow: [
+                          color: const Color.fromARGB(255, 241, 234, 236),
+                          boxShadow: const [
                             BoxShadow(
                               blurRadius: 1,
                               color: Colors.grey,
@@ -134,7 +131,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Image(
-                              image: AssetImage("assets/icons/2.png"),
+                              image: const AssetImage("assets/icons/2.png"),
                               height: isPortrait ? 65 : 80),
                           Expanded(
                             child: Text(
@@ -157,8 +154,8 @@ class _ProfilePageState extends State<ProfilePage> {
                 height: isPortrait ? 90 : 110,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Color.fromARGB(255, 241, 234, 236),
-                    boxShadow: [
+                    color: const Color.fromARGB(255, 241, 234, 236),
+                    boxShadow: const [
                       BoxShadow(
                         blurRadius: 1,
                         color: Colors.grey,
@@ -171,7 +168,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       padding: EdgeInsets.symmetric(
                           horizontal: isPortrait ? 10 : 10),
                       child: Image(
-                          image: AssetImage("assets/icons/3.png"),
+                          image: const AssetImage("assets/icons/3.png"),
                           height: isPortrait ? 50 : 80),
                     ),
                     Padding(
@@ -195,8 +192,8 @@ class _ProfilePageState extends State<ProfilePage> {
                 height: isPortrait ? 90 : 110,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Color.fromARGB(255, 241, 234, 236),
-                    boxShadow: [
+                    color: const Color.fromARGB(255, 241, 234, 236),
+                    boxShadow: const [
                       BoxShadow(
                         blurRadius: 1,
                         color: Colors.grey,
@@ -209,7 +206,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       padding: EdgeInsets.symmetric(
                           horizontal: isPortrait ? 10 : 10),
                       child: Image(
-                          image: AssetImage("assets/icons/4.png"),
+                          image: const AssetImage("assets/icons/4.png"),
                           height: isPortrait ? 50 : 80),
                     ),
                     Padding(
@@ -226,7 +223,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
             ],

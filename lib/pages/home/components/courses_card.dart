@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CoursesCard extends StatefulWidget {
   const CoursesCard({
@@ -27,14 +26,14 @@ class _CoursesCardState extends State<CoursesCard> {
         MediaQuery.of(context).orientation == Orientation.portrait;
 
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: UnconstrainedBox(
         child: Container(
           width: isPortrait ? 240 : 270,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: Colors.white,
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   blurRadius: 2,
                   color: Colors.grey,
@@ -47,7 +46,7 @@ class _CoursesCardState extends State<CoursesCard> {
                 width: double.infinity,
                 height: isPortrait ? 110 : 130,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.vertical(
+                  borderRadius: const BorderRadius.vertical(
                     top: Radius.circular(20),
                   ),
                   image: DecorationImage(
@@ -61,9 +60,9 @@ class _CoursesCardState extends State<CoursesCard> {
                         width: 110,
                         height: isPortrait ? 20 : 20,
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 211, 154, 63),
+                            color: const Color.fromARGB(255, 211, 154, 63),
                             borderRadius: BorderRadius.circular(50)),
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             "Aages (10 : 13)",
                             style: TextStyle(
@@ -80,29 +79,31 @@ class _CoursesCardState extends State<CoursesCard> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       widget.courseName,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 14,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         CircleAvatar(
-                          backgroundColor: Color.fromARGB(255, 245, 245, 245),
+                          backgroundColor:
+                              const Color.fromARGB(255, 245, 245, 245),
                           maxRadius: isPortrait ? 15 : 15,
                           backgroundImage: AssetImage(widget.profilUrl),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
                         Text(
@@ -113,7 +114,7 @@ class _CoursesCardState extends State<CoursesCard> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Row(
@@ -126,7 +127,7 @@ class _CoursesCardState extends State<CoursesCard> {
                           ignoreGestures: true,
                           itemCount: 5,
                           itemSize: isPortrait ? 20.0 : 20.0,
-                          itemBuilder: (context, _) => Icon(
+                          itemBuilder: (context, _) => const Icon(
                             Icons.star,
                             color: Colors.amber,
                           ),
@@ -134,16 +135,16 @@ class _CoursesCardState extends State<CoursesCard> {
                             print(rating);
                           },
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
-                        Text(
+                        const Text(
                           "4.5 (129)",
                           style: TextStyle(fontWeight: FontWeight.w600),
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Row(
@@ -155,7 +156,7 @@ class _CoursesCardState extends State<CoursesCard> {
                             borderRadius: BorderRadius.circular(5),
                           ),
                           child: Padding(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 vertical: 5, horizontal: 10),
                             child: Text(
                               "Best Seller",
@@ -168,7 +169,7 @@ class _CoursesCardState extends State<CoursesCard> {
                         Text(
                           "Rp. 500.000",
                           style: TextStyle(
-                              color: Color.fromARGB(255, 120, 54, 74),
+                              color: const Color.fromARGB(255, 120, 54, 74),
                               fontSize: isPortrait ? 15 : 15,
                               fontWeight: FontWeight.bold),
                         ),

@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:logger/logger.dart';
 import 'package:smart_kids_app/pages/home/components/categories_card.dart';
 import 'package:smart_kids_app/pages/home/components/courses_card.dart';
@@ -13,7 +12,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool _isReady = false;
   final TextEditingController _searchController = TextEditingController();
   final List<String> imagesBanner = [
     "assets/banner/1.png",
@@ -99,12 +97,11 @@ class _HomePageState extends State<HomePage> {
               "Ini Orintation ${orientation} Ini media query ${MediaQuery.of(context).orientation}");
           final isPortrait =
               MediaQuery.of(context).orientation == Orientation.portrait;
-          Size screenSize = MediaQuery.of(context).size;
+
           var mediaQueryData = MediaQuery.of(context);
-          final double widthScreen = mediaQueryData.size.width;
           final double heightScreen = mediaQueryData.size.height;
           SystemChrome.setSystemUIOverlayStyle(
-            SystemUiOverlayStyle(
+            const SystemUiOverlayStyle(
               statusBarColor: Colors.white, // Warna hitam dengan opasitas
               statusBarIconBrightness:
                   Brightness.dark, // Sesuaikan brightness ikon status bar
@@ -119,7 +116,7 @@ class _HomePageState extends State<HomePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -133,7 +130,7 @@ class _HomePageState extends State<HomePage> {
                               backgroundImage:
                                   AssetImage('assets/profilephoto.png'),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 12,
                             ),
                             Column(
@@ -172,7 +169,7 @@ class _HomePageState extends State<HomePage> {
                                 child: Icon(Icons.notifications_none),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
                             Container(
@@ -205,14 +202,13 @@ class _HomePageState extends State<HomePage> {
                         Flexible(
                           child: TextField(
                             controller: _searchController,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               hintText: "Search Course",
-                              prefixIcon: const Icon(Icons.search),
+                              prefixIcon: Icon(Icons.search),
                               contentPadding: EdgeInsets.only(top: 25),
                               filled: true,
-                              fillColor:
-                                  const Color.fromARGB(255, 243, 243, 243),
-                              border: const OutlineInputBorder(
+                              fillColor: Color.fromARGB(255, 243, 243, 243),
+                              border: OutlineInputBorder(
                                   borderRadius: BorderRadius.all(
                                     Radius.circular(11),
                                   ),
@@ -220,7 +216,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         InkWell(
@@ -233,9 +229,9 @@ class _HomePageState extends State<HomePage> {
                               ),
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: Padding(
+                            child: const Padding(
                               padding: EdgeInsets.all(11),
-                              child: const Icon(Icons.filter_alt_sharp,
+                              child: Icon(Icons.filter_alt_sharp,
                                   color: Colors.white),
                             ),
                           ),
@@ -243,11 +239,11 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: Text(
                       "Categories",
                       style: TextStyle(
@@ -255,32 +251,15 @@ class _HomePageState extends State<HomePage> {
                           fontSize: isPortrait ? 17 : 20),
                     ),
                   ),
-                  // isPortrait
-                  //     ? Padding(
-                  //         padding: EdgeInsets.symmetric(horizontal: 15),
-                  //         child: Text(
-                  //           "Categories",
-                  //           style: TextStyle(
-                  //               fontWeight: FontWeight.bold, fontSize: 17),
-                  //         ),
-                  //       )
-                  //     : Padding(
-                  //         padding: EdgeInsets.symmetric(horizontal: 15),
-                  //         child: Text(
-                  //           "Categories",
-                  //           style: TextStyle(
-                  //               fontWeight: FontWeight.bold, fontSize: 10),
-                  //         ),
-                  //       ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   SizedBox(
                     height: isPortrait ? 50 : 70,
                     child: ListView.separated(
-                      padding: EdgeInsets.only(left: 15),
+                      padding: const EdgeInsets.only(left: 15),
                       separatorBuilder: (context, index) {
-                        return SizedBox(
+                        return const SizedBox(
                           width: 10,
                         );
                       },
@@ -294,50 +273,7 @@ class _HomePageState extends State<HomePage> {
                       },
                     ),
                   ),
-                  // isPortrait
-                  //     ? SizedBox(
-                  //         height: 40,
-                  //         child: ListView.separated(
-                  //           padding: EdgeInsets.only(left: 15),
-                  //           separatorBuilder: (context, index) {
-                  //             return SizedBox(
-                  //               width: 10,
-                  //             );
-                  //           },
-                  //           shrinkWrap: true,
-                  //           scrollDirection: Axis.horizontal,
-                  //           itemCount: 5,
-                  //           itemBuilder: (context, index) {
-                  //             return CategorieCard(
-                  //                 urlIcon:
-                  //                     listcategory[index]['asset'].toString(),
-                  //                 title:
-                  //                     listcategory[index]['name'].toString());
-                  //           },
-                  //         ),
-                  //       )
-                  //     : SizedBox(
-                  //         height: 140,
-                  //         child: ListView.separated(
-                  //           padding: EdgeInsets.only(left: 15),
-                  //           separatorBuilder: (context, index) {
-                  //             return SizedBox(
-                  //               width: 10,
-                  //             );
-                  //           },
-                  //           shrinkWrap: true,
-                  //           scrollDirection: Axis.horizontal,
-                  //           itemCount: 5,
-                  //           itemBuilder: (context, index) {
-                  //             return CategorieCard(
-                  //                 urlIcon:
-                  //                     listcategory[index]['asset'].toString(),
-                  //                 title:
-                  //                     listcategory[index]['name'].toString());
-                  //           },
-                  //         ),
-                  //       ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   SizedBox(
@@ -409,160 +345,11 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  // isPortrait
-                  //     ? SizedBox(
-                  //         height: 140,
-                  //         child: Column(
-                  //           children: [
-                  //             Expanded(
-                  //               child: CarouselSlider(
-                  //                 carouselController: buttonCarouselController,
-                  //                 options: CarouselOptions(
-                  //                     height: 500,
-                  //                     autoPlay: true,
-                  //                     enlargeCenterPage: true,
-                  //                     autoPlayInterval:
-                  //                         const Duration(seconds: 5),
-                  //                     autoPlayAnimationDuration:
-                  //                         const Duration(milliseconds: 800),
-                  //                     onPageChanged: (index, reason) {
-                  //                       setState(() {
-                  //                         _current = index;
-                  //                       });
-                  //                     }),
-                  //                 items: imagesBanner.map((i) {
-                  //                   return Padding(
-                  //                     padding: const EdgeInsets.symmetric(
-                  //                         vertical: 5),
-                  //                     child: Builder(
-                  //                       builder: (BuildContext context) {
-                  //                         return Container(
-                  //                           decoration: BoxDecoration(
-                  //                               color: Colors.amber,
-                  //                               borderRadius:
-                  //                                   BorderRadius.circular(20)),
-                  //                           child: ClipRRect(
-                  //                             borderRadius:
-                  //                                 BorderRadius.circular(20),
-                  //                             child: Image(
-                  //                               image: AssetImage(i),
-                  //                             ),
-                  //                           ),
-                  //                         );
-                  //                       },
-                  //                     ),
-                  //                   );
-                  //                 }).toList(),
-                  //               ),
-                  //             ),
-                  //             Row(
-                  //               mainAxisAlignment: MainAxisAlignment.center,
-                  //               children:
-                  //                   imagesBanner.asMap().entries.map((entry) {
-                  //                 return GestureDetector(
-                  //                   onTap: () => buttonCarouselController
-                  //                       .animateToPage(entry.key),
-                  //                   child: Container(
-                  //                     width: 8.0,
-                  //                     height: 8.0,
-                  //                     margin: const EdgeInsets.symmetric(
-                  //                         vertical: 8.0, horizontal: 4.0),
-                  //                     decoration: BoxDecoration(
-                  //                         shape: BoxShape.circle,
-                  //                         color: (Theme.of(context)
-                  //                                         .brightness ==
-                  //                                     Brightness.dark
-                  //                                 ? Colors.white
-                  //                                 : Colors.black)
-                  //                             .withOpacity(_current == entry.key
-                  //                                 ? 0.9
-                  //                                 : 0.4)),
-                  //                   ),
-                  //                 );
-                  //               }).toList(),
-                  //             )
-                  //           ],
-                  //         ),
-                  //       )
-                  //     : SizedBox(
-                  //         height: 400,
-                  //         child: Column(
-                  //           children: [
-                  //             Expanded(
-                  //               child: CarouselSlider(
-                  //                 carouselController: buttonCarouselController,
-                  //                 options: CarouselOptions(
-                  //                     height: 500,
-                  //                     autoPlay: true,
-                  //                     enlargeCenterPage: true,
-                  //                     autoPlayInterval:
-                  //                         const Duration(seconds: 5),
-                  //                     autoPlayAnimationDuration:
-                  //                         const Duration(milliseconds: 800),
-                  //                     onPageChanged: (index, reason) {
-                  //                       setState(() {
-                  //                         _current = index;
-                  //                       });
-                  //                     }),
-                  //                 items: imagesBanner.map((i) {
-                  //                   return Padding(
-                  //                     padding: const EdgeInsets.symmetric(
-                  //                         vertical: 5),
-                  //                     child: Builder(
-                  //                       builder: (BuildContext context) {
-                  //                         return Container(
-                  //                           decoration: BoxDecoration(
-                  //                               color: Colors.amber,
-                  //                               borderRadius:
-                  //                                   BorderRadius.circular(20)),
-                  //                           child: ClipRRect(
-                  //                             borderRadius:
-                  //                                 BorderRadius.circular(20),
-                  //                             child: Image(
-                  //                               image: AssetImage(i),
-                  //                             ),
-                  //                           ),
-                  //                         );
-                  //                       },
-                  //                     ),
-                  //                   );
-                  //                 }).toList(),
-                  //               ),
-                  //             ),
-                  //             Row(
-                  //               mainAxisAlignment: MainAxisAlignment.center,
-                  //               children:
-                  //                   imagesBanner.asMap().entries.map((entry) {
-                  //                 return GestureDetector(
-                  //                   onTap: () => buttonCarouselController
-                  //                       .animateToPage(entry.key),
-                  //                   child: Container(
-                  //                     width: 8.0,
-                  //                     height: 8.0,
-                  //                     margin: const EdgeInsets.symmetric(
-                  //                         vertical: 8.0, horizontal: 4.0),
-                  //                     decoration: BoxDecoration(
-                  //                         shape: BoxShape.circle,
-                  //                         color: (Theme.of(context)
-                  //                                         .brightness ==
-                  //                                     Brightness.dark
-                  //                                 ? Colors.white
-                  //                                 : Colors.black)
-                  //                             .withOpacity(_current == entry.key
-                  //                                 ? 0.9
-                  //                                 : 0.4)),
-                  //                   ),
-                  //                 );
-                  //               }).toList(),
-                  //             )
-                  //           ],
-                  //         ),
-                  //       ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: Text(
                       "Popular Courses",
                       style: TextStyle(
@@ -570,7 +357,7 @@ class _HomePageState extends State<HomePage> {
                           fontSize: isPortrait ? 17 : 19),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   SizedBox(
@@ -585,9 +372,9 @@ class _HomePageState extends State<HomePage> {
                     //     : 560,
                     height: isPortrait ? 300 : 300,
                     child: ListView.separated(
-                      padding: EdgeInsets.only(left: 15, right: 15),
+                      padding: const EdgeInsets.only(left: 15, right: 15),
                       separatorBuilder: (context, index) {
-                        return SizedBox(
+                        return const SizedBox(
                           width: 15,
                         );
                       },
@@ -604,11 +391,11 @@ class _HomePageState extends State<HomePage> {
                       },
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: Text(
                       "Top Instructors",
                       style: TextStyle(
@@ -616,15 +403,15 @@ class _HomePageState extends State<HomePage> {
                           fontSize: isPortrait ? 17 : 19),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   SizedBox(
                     height: isPortrait ? 180 : 180,
                     child: ListView.separated(
-                      padding: EdgeInsets.only(left: 15, right: 15),
+                      padding: const EdgeInsets.only(left: 15, right: 15),
                       separatorBuilder: (context, index) {
-                        return SizedBox(
+                        return const SizedBox(
                           width: 15,
                         );
                       },
@@ -641,7 +428,7 @@ class _HomePageState extends State<HomePage> {
                       },
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                 ],

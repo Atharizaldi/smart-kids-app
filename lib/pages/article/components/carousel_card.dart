@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CarouselCard extends StatelessWidget {
   const CarouselCard({
@@ -67,7 +66,7 @@ class CarouselCard extends StatelessWidget {
                           color: Colors.white,
                           fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 2,
                     ),
                     Row(
@@ -78,7 +77,7 @@ class CarouselCard extends StatelessWidget {
                           maxRadius: isPortrait ? 15 : 15,
                           backgroundImage: AssetImage(authorProfilUrl),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
                         Text(
