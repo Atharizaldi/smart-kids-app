@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class CourseOngoingCard extends StatelessWidget {
@@ -23,7 +22,7 @@ class CourseOngoingCard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Color.fromARGB(255, 245, 244, 245),
+        color: const Color.fromARGB(255, 245, 244, 245),
       ),
       child: Padding(
         padding: const EdgeInsets.all(10),
@@ -40,7 +39,7 @@ class CourseOngoingCard extends StatelessWidget {
                       image: DecorationImage(
                           image: AssetImage(bannerUrl), fit: BoxFit.cover)),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 15,
                 ),
                 SizedBox(
@@ -50,12 +49,12 @@ class CourseOngoingCard extends StatelessWidget {
                     children: [
                       Text(
                         title,
-                        style: TextStyle(fontWeight: FontWeight.w600),
+                        style: const TextStyle(fontWeight: FontWeight.w600),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 8,
                       ),
-                      Text(
+                      const Text(
                         "6 Lesson Left",
                         style: TextStyle(
                           fontSize: 11,
@@ -72,7 +71,7 @@ class CourseOngoingCard extends StatelessWidget {
               percent: percentage,
               center: Text(
                 percentageText,
-                style: TextStyle(fontWeight: FontWeight.w600),
+                style: const TextStyle(fontWeight: FontWeight.w600),
               ),
               progressColor: color,
             )

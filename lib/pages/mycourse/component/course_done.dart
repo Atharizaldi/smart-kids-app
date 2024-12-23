@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class CourseDoneCard extends StatelessWidget {
@@ -17,7 +16,7 @@ class CourseDoneCard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Color.fromARGB(255, 245, 244, 245),
+        color: const Color.fromARGB(255, 245, 244, 245),
       ),
       child: Padding(
         padding: const EdgeInsets.all(10),
@@ -36,7 +35,7 @@ class CourseDoneCard extends StatelessWidget {
                           image: DecorationImage(
                               image: AssetImage(bannerUrl), fit: BoxFit.cover)),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 15,
                     ),
                     SizedBox(
@@ -48,10 +47,10 @@ class CourseDoneCard extends StatelessWidget {
                             tile,
                             style: TextStyle(fontWeight: FontWeight.w600),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 8,
                           ),
-                          Text(
+                          const Text(
                             "3 hrs 20 mnt ",
                             style: TextStyle(
                               fontSize: 11,
@@ -66,7 +65,7 @@ class CourseDoneCard extends StatelessWidget {
                   radius: 40.0,
                   lineWidth: 5.0,
                   percent: 1.0,
-                  center: Text(
+                  center: const Text(
                     "100%",
                     style: TextStyle(
                         fontWeight: FontWeight.w600,
@@ -76,10 +75,10 @@ class CourseDoneCard extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(

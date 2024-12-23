@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CategorieCard extends StatefulWidget {
-  CategorieCard({super.key, required this.urlIcon, required this.title});
+  const CategorieCard({super.key, required this.urlIcon, required this.title});
 
   final String urlIcon;
   final String title;
@@ -25,8 +24,8 @@ class _CategorieCardState extends State<CategorieCard> {
           borderRadius: const BorderRadius.all(
             Radius.circular(50),
           ),
-          border:
-              Border.all(width: 0.5, color: Color.fromARGB(255, 188, 188, 188)),
+          border: Border.all(
+              width: 0.5, color: const Color.fromARGB(255, 188, 188, 188)),
         ),
         child: Row(
           children: [
@@ -34,7 +33,7 @@ class _CategorieCardState extends State<CategorieCard> {
               image: AssetImage(widget.urlIcon),
               height: isPortrait ? 20 : 30,
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             Text(

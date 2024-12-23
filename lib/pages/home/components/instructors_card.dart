@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class InstructorsCard extends StatefulWidget {
-  InstructorsCard({
+  const InstructorsCard({
     super.key,
     required this.profilUrl,
     required this.name,
@@ -32,7 +31,7 @@ class _InstructorsCardState extends State<InstructorsCard> {
           child: Container(
             width: isPortrait ? 150 : 150,
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 234, 234, 234),
+              color: const Color.fromARGB(255, 234, 234, 234),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Padding(
@@ -52,9 +51,9 @@ class _InstructorsCardState extends State<InstructorsCard> {
                         letterSpacing: 0,
                         fontSize: isPortrait ? 11 : 11,
                         fontWeight: FontWeight.w600,
-                        color: Color.fromARGB(255, 99, 99, 99)),
+                        color: const Color.fromARGB(255, 99, 99, 99)),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   Text(
@@ -65,11 +64,11 @@ class _InstructorsCardState extends State<InstructorsCard> {
                         fontWeight: FontWeight.w600,
                         color: Color.fromARGB(255, 99, 99, 99)),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -78,9 +77,9 @@ class _InstructorsCardState extends State<InstructorsCard> {
                             Icon(
                               Icons.groups,
                               size: isPortrait ? 16 : 20,
-                              color: Color.fromARGB(255, 120, 54, 74),
+                              color: const Color.fromARGB(255, 120, 54, 74),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
                             Text(
@@ -98,7 +97,7 @@ class _InstructorsCardState extends State<InstructorsCard> {
                               allowHalfRating: true,
                               itemCount: 1,
                               itemSize: isPortrait ? 20.0 : 20.0,
-                              itemBuilder: (context, _) => Icon(
+                              itemBuilder: (context, _) => const Icon(
                                 Icons.star,
                                 color: Colors.amber,
                               ),

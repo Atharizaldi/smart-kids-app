@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ArticleCard extends StatelessWidget {
   const ArticleCard({
@@ -44,7 +43,7 @@ class ArticleCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 Container(
@@ -58,7 +57,7 @@ class ArticleCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 Row(
@@ -71,7 +70,7 @@ class ArticleCard extends StatelessWidget {
                           maxRadius: isPortrait ? 15 : 15,
                           backgroundImage: AssetImage(authorProfilUrl),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
                         Text(
@@ -82,7 +81,7 @@ class ArticleCard extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 25,
                     ),
                     Text(
@@ -96,7 +95,7 @@ class ArticleCard extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           Container(
